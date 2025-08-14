@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रवेश | PM SHRI MGGS Jeeni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-blue: #1e88e5;
+            --light-blue: #bbdefb;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-blue);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Page Hero */
+        .admission-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admission-hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .admission-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .admission-hero h1 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .admission-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        
+        /* Admission Info Section */
+        .admission-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .info-card p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Admission Button Section */
+        .admission-cta {
+            text-align: center;
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .admission-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(13, 71, 161, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admission-btn:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(13, 71, 161, 0.4);
+        }
+        
+        .admission-btn:active {
+            transform: translateY(0);
+        }
+        
+        .admission-btn::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        /* Location Section */
+        .location-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .address-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .address-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            text-align: center;
+        }
+        
+        .address-details {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .address-details li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+        }
+        
+        .address-details li:last-child {
+            border-bottom: none;
+        }
+        
+        .address-details li i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            width: 30px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .admission-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .admission-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .admission-info, .location-section {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .admission-hero {
+                padding: 70px 20px;
+            }
+            
+            .admission-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .admission-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>PM SHRI MGGS जीनी</h1>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <li><a href="academics.html">शैक्षणिक</a></li>
+                <li><a href="facilities.html">सुविधाएँ</a></li>
+                <li><a href="admissions.html" class="active">प्रवेश</a></li>
+                <li><a href="gallery.html">गैलरी</a></li>
+                <li><a href="contact.html">संपर्क करें</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="admission-hero">
+        <div class="container">
+            <h1>विद्यालय में प्रवेश</h1>
+            <p>PM SHRI MGGS Jeeni — सत्र 2025-26 के लिए प्रवेश प्रक्रिया</p>
+        </div>
+    </section>
+
+    <!-- Admission Information -->
+    <section class="section">
+        <div class="container">
+            <div class="admission-info">
+                <h2 class="section-title">प्रवेश जानकारी</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-graduation-cap"></i> कक्षाएँ</h3>
+                        <p>प्रवेश कक्षा 1 से 12 तक के लिए खुला है।</p>
+                        <p>प्रवेश प्रक्रिया राजस्थान सरकार के शिक्षा विभाग द्वारा निर्धारित दिशा-निर्देशों के अनुसार होती है।</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-file-alt"></i> आवश्यक दस्तावेज</h3>
+                        <ul style="list-style: none; text-align: left; padding: 15px;">
+                            <li>• जन्म प्रमाण पत्र</li>
+                            <li>• पिछले विद्यालय का ट्रांसफर सर्टिफिकेट</li>
+                            <li>• आधार कार्ड की प्रति</li>
+                            <li>• जाति प्रमाण पत्र (यदि लागू हो)</li>
+                            <li>• निवास प्रमाण पत्र</li>
+                            <li>• 4 पासपोर्ट साइज फोटो</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> समय और माध्यम</h3>
+                        <p>कार्यदिवसों में सुबह 9:00 से दोपहर 2:00 बजे तक</p>
+                        <p>माध्यम: हिंदी और अंग्रेज़ी</p>
+                        <p>प्रवेश प्रक्रिया के लिए न्यूनतम आयु कक्षा 1 के लिए 6 वर्ष है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Button -->
+    <section class="admission-cta">
+        <div class="container">
+            <a href="tel:+919413545552" class="admission-btn">
+                <i class="fas fa-phone-alt"></i> Admission Now
+            </a>
+            <p style="margin-top: 30px; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                प्रवेश प्रक्रिया के लिए ऊपर दिए गए बटन पर क्लिक करें और प्रधानाध्यापिका से सीधे बात करें। 
+                कार्यदिवसों में सुबह 9:00 से दोपहर 2:00 बजे तक कॉल करें।
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section">
+        <div class="container">
+            <div class="location-section">
+                <h2 class="section-title">लोकेशन और विज़िट</h2>
+                
+                <div class="location-grid">
+                    <div class="map-container">
+                        <div>
+                            <i class="fas fa-map-marker-alt" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                            <h3 style="margin-bottom: 15px;">Google Maps</h3>
+                            <p>PM SHRI MGGS Jeeni का स्थान</p>
+                            <p style="margin-top: 20px; font-size: 1rem;">(Google Maps एम्बेड यहाँ दिखाया जाएगा)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="address-card">
+                        <h3>स्कूल का पता</h3>
+                        <ul class="address-details">
+                            <li>
+                                <i class="fas fa-school"></i>
+                                <div>
+                                    <strong>PM SHRI महात्मा गांधी सरकारी स्कूल</strong><br>
+                                    जीनी, सूरजगढ़, झुंझुनू, राजस्थान — 333030
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-pin"></i>
+                                <div>रामदेव मंदिर के पास</div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>समय: सोमवार से शनिवार, सुबह 8:00 बजे से दोपहर 3:00 बजे तक</div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>फोन: <a href="tel:9413545552" style="color: var(--primary-blue);">9413545552</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>PM SHRI MGGS जीनी</h3>
+                <p>गुणवत्तापूर्ण शिक्षा के लिए समर्पित<br>
+                झुंझुनू, राजस्थान</p>
+                <p><strong>UDISE कोड:</strong> 08050404302</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>प्रवेश लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="admissions.html">प्रवेश जानकारी</a></li>
+                    <li><a href="admissions.html">आवश्यक दस्तावेज</a></li>
+                    <li><a href="admissions.html">शुल्क संरचना</a></li>
+                    <li><a href="admissions.html">प्रवेश प्रक्रिया</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>त्वरित लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">होम</a></li>
+                    <li><a href="about.html">हमारे बारे में</a></li>
+                    <li><a href="academics.html">शैक्षणिक</a></li>
+                    <li><a href="facilities.html">सुविधाएँ</a></li>
+                    <li><a href="admissions.html">प्रवेश</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>संपर्क करें</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:9413545552"><i class="fas fa-phone"></i> 9413545552</a></li>
+                    <li><a href="mailto:sunitakwar123@gmail.com"><i class="fas fa-envelope"></i> sunitakwar123@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> जीनी, सूरजगढ़, झुंझुनू</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 PM SHRI महात्मा गांधी सरकारी स्कूल, जीनी | सभी अधिकार सुरक्षित</p>
+            <p>विकसित: स्कूल प्रबंधन समिति | UDISE: 08050404302</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Button animation
+        const admissionBtn = document.querySelector('.admission-btn');
+        admissionBtn.addEventListener('mouseover', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        admissionBtn.addEventListener('mouseout', function() {
+            this.style.transform = 'translateY(0)';
+        });
+        
+        admissionBtn.addEventListener('mousedown', function() {
+            this.style.transform = 'translateY(2px)';
+        });
+        
+        admissionBtn.addEventListener('mouseup', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+    </script>
+</body>
+</html>

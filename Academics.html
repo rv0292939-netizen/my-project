@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शैक्षणिक विवरण | PM SHRI MGGS Jeeni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-blue: #1e88e5;
+            --light-blue: #bbdefb;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-blue);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Page Hero */
+        .academics-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .academics-hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .academics-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .academics-hero h1 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .academics-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        
+        /* Class and Medium Section */
+        .class-medium {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .info-card p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Subjects Section */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .subject-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .subject-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .subject-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .subject-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .subject-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .subject-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        /* Charts Section */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .chart-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+        }
+        
+        .chart {
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+        }
+        
+        .bar-label {
+            margin-top: 10px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .bar {
+            width: 60%;
+            background-color: var(--light-blue);
+            border-radius: 5px 5px 0 0;
+            transition: height 1s ease;
+            position: relative;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .student-bar {
+            background: linear-gradient(to top, var(--primary-blue), var(--secondary-blue));
+        }
+        
+        .teacher-bar {
+            background: linear-gradient(to top, #ff6b6b, #ff8e8e);
+        }
+        
+        /* Curriculum Section */
+        .curriculum {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+        
+        .curriculum-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            padding: 20px;
+            border: 2px dashed var(--light-blue);
+            border-radius: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .academics-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .academics-hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .class-medium, .curriculum {
+                padding: 25px;
+            }
+            
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .academics-hero {
+                padding: 70px 20px;
+            }
+            
+            .academics-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .info-card, .subject-card {
+                padding: 20px;
+            }
+            
+            .chart {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>PM SHRI MGGS जीनी</h1>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <li><a href="academics.html" class="active">शैक्षणिक</a></li>
+                <li><a href="facilities.html">सुविधाएँ</a></li>
+                <li><a href="admissions.html">प्रवेश</a></li>
+                <li><a href="gallery.html">गैलरी</a></li>
+                <li><a href="contact.html">संपर्क करें</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="academics-hero">
+        <div class="container">
+            <h1>शैक्षणिक विवरण</h1>
+            <p>PM SHRI MGGS Jeeni — गुणवत्तापूर्ण शिक्षा कक्षा 1 से 12 तक</p>
+        </div>
+    </section>
+
+    <!-- Class and Medium Section -->
+    <section class="section">
+        <div class="container">
+            <div class="class-medium">
+                <h2 class="section-title">कक्षा और माध्यम</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>कक्षा सीमा</h3>
+                        <p>कक्षा 1 से 12 तक</p>
+                        <div style="font-size: 3rem; color: var(--primary-blue); margin: 20px 0;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <p>प्राथमिक, उच्च प्राथमिक, माध्यमिक और उच्च माध्यमिक शिक्षा</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>शिक्षा माध्यम</h3>
+                        <p>हिंदी और अंग्रेज़ी</p>
+                        <div style="font-size: 3rem; color: var(--primary-blue); margin: 20px 0;">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <p>द्विभाषी शिक्षण पद्धति</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>शैक्षणिक सत्र</h3>
+                        <p>अप्रैल से मार्च</p>
+                        <div style="font-size: 3rem; color: var(--primary-blue); margin: 20px 0;">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <p>दो सेमेस्टर: अप्रैल-सितंबर, अक्टूबर-मार्च</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects and Streams Section -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">विषय और संकाय</h2>
+            
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <h3>कला संकाय</h3>
+                    <ul class="subject-list">
+                        <li>राजनीति विज्ञान</li>
+                        <li>गृह विज्ञान</li>
+                        <li>हिंदी साहित्य</li>
+                        <li>इतिहास</li>
+                        <li>अर्थशास्त्र</li>
+                        <li>भूगोल</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>विज्ञान संकाय</h3>
+                    <ul class="subject-list">
+                        <li>भौतिक विज्ञान</li>
+                        <li>रसायन विज्ञान</li>
+                        <li>जीव विज्ञान</li>
+                        <li>गणित</li>
+                        <li>कंप्यूटर विज्ञान</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>वैकल्पिक विषय</h3>
+                    <ul class="subject-list">
+                        <li>कंप्यूटर विज्ञान</li>
+                        <li>शारीरिक शिक्षा</li>
+                        <li>संगीत</li>
+                        <li>चित्रकला</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>तृतीय भाषा</h3>
+                    <ul class="subject-list">
+                        <li>संस्कृत</li>
+                        <li>उर्दू</li>
+                        <li>राजस्थानी</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>व्यावसायिक पाठ्यक्रम</h3>
+                    <ul class="subject-list">
+                        <li>IT एवं ITeS</li>
+                        <li>खुदरा प्रबंधन</li>
+                        <li>कृषि विज्ञान</li>
+                        <li>बैंकिंग और बीमा</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student and Teacher Statistics -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">छात्र और शिक्षक सांख्यिकी</h2>
+            
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3 class="chart-title">छात्र नामांकन (कुल: 297)</h3>
+                    <div class="chart">
+                        <div class="bar-container">
+                            <div class="bar student-bar" style="height: 100%;">
+                                <div class="bar-value">100%</div>
+                            </div>
+                            <div class="bar-label">कुल छात्र</div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar student-bar" style="height: 45%;">
+                                <div class="bar-value">45%</div>
+                            </div>
+                            <div class="bar-label">लड़के</div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar student-bar" style="height: 55%;">
+                                <div class="bar-value">55%</div>
+                            </div>
+                            <div class="bar-label">लड़कियाँ</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <p><strong>लड़के:</strong> 133 | <strong>लड़कियाँ:</strong> 164</p>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h3 class="chart-title">शिक्षक संख्या (कुल: 19)</h3>
+                    <div class="chart">
+                        <div class="bar-container">
+                            <div class="bar teacher-bar" style="height: 100%;">
+                                <div class="bar-value">100%</div>
+                            </div>
+                            <div class="bar-label">कुल शिक्षक</div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar teacher-bar" style="height: 53%;">
+                                <div class="bar-value">53%</div>
+                            </div>
+                            <div class="bar-label">पुरुष</div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar teacher-bar" style="height: 47%;">
+                                <div class="bar-value">47%</div>
+                            </div>
+                            <div class="bar-label">महिला</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <p><strong>पुरुष शिक्षक:</strong> 10 | <strong>महिला शिक्षक:</strong> 9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Structure -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">पाठ्यक्रम संरचना</h2>
+            
+            <div class="curriculum">
+                <div class="curriculum-content">
+                    <p>PM SHRI महात्मा गांधी सरकारी स्कूल, जीनी में शिक्षा का पाठ्यक्रम राजस्थान माध्यमिक शिक्षा बोर्ड (RBSE) के दिशा-निर्देशों के अनुसार संचालित किया जाता है। हमारा पाठ्यक्रम राष्ट्रीय शिक्षा नीति (NEP) 2020 के सिद्धांतों पर आधारित है, जो छात्रों के सर्वांगीण विकास पर बल देता है।</p>
+                    <p style="margin-top: 20px;">हमारा वार्षिक पाठ्यक्रम दो सेमेस्टर में विभाजित है, जिसमें नियमित मूल्यांकन, परियोजना कार्य और व्यावहारिक शिक्षा पर विशेष ध्यान दिया जाता है। पाठ्यक्रम को विषय विशेषज्ञों द्वारा निरंतर समीक्षा और अद्यतन किया जाता है ताकि छात्रों को समकालीन ज्ञान और कौशल प्रदान किया जा सके।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>PM SHRI MGGS जीनी</h3>
+                <p>गुणवत्तापूर्ण शिक्षा के लिए समर्पित<br>
+                झुंझुनू, राजस्थान</p>
+                <p><strong>UDISE कोड:</strong> 08050404302</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>शैक्षणिक लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="#">पाठ्यक्रम</a></li>
+                    <li><a href="#">परीक्षा कार्यक्रम</a></li>
+                    <li><a href="#">परिणाम</a></li>
+                    <li><a href="#">पुस्तकालय</a></li>
+                    <li><a href="#">शैक्षणिक कैलेंडर</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>त्वरित लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">होम</a></li>
+                    <li><a href="about.html">हमारे बारे में</a></li>
+                    <li><a href="academics.html">शैक्षणिक</a></li>
+                    <li><a href="facilities.html">सुविधाएँ</a></li>
+                    <li><a href="admissions.html">प्रवेश</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>संपर्क करें</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:9413545552"><i class="fas fa-phone"></i> 9413545552</a></li>
+                    <li><a href="mailto:sunitakwar123@gmail.com"><i class="fas fa-envelope"></i> sunitakwar123@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> जीनी, सूरजगढ़, झुंझुनू</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 PM SHRI महात्मा गांधी सरकारी स्कूल, जीनी | सभी अधिकार सुरक्षित</p>
+            <p>विकसित: स्कूल प्रबंधन समिति | UDISE: 08050404302</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Simple animation for charts
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach(bar => {
+                const height = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.height = height;
+                }, 500);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

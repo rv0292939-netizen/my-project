@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सुविधाएँ | PM SHRI MGGS Jeeni</title>
+    <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-blue: #1e88e5;
+            --light-blue: #bbdefb;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--primary-blue);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Page Hero */
+        .facilities-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .facilities-hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .facilities-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .facilities-hero h1 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .facilities-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .facility-icon {
+            height: 120px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .facility-content {
+            padding: 30px;
+        }
+        
+        .facility-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .facility-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .facility-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .facility-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .facility-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .status-available {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        
+        .status-not-available {
+            color: #c62828;
+            font-weight: 600;
+        }
+        
+        .status-partial {
+            color: #ed6c02;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .facilities-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .facilities-hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .facilities-hero {
+                padding: 70px 20px;
+            }
+            
+            .facilities-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>PM SHRI MGGS जीनी</h1>
+            </div>
+            
+            <div class="hamburger">
+                <span>☰</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <li><a href="academics.html">शैक्षणिक</a></li>
+                <li><a href="facilities.html" class="active">सुविधाएँ</a></li>
+                <li><a href="admissions.html">प्रवेश</a></li>
+                <li><a href="gallery.html">गैलरी</a></li>
+                <li><a href="contact.html">संपर्क करें</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="facilities-hero">
+        <div class="container">
+            <h1>विद्यालय की सुविधाएँ</h1>
+            <p>PM SHRI MGGS Jeeni — विद्यार्थियों के सर्वांगीण विकास हेतु सुविधाएँ</p>
+        </div>
+    </section>
+
+    <!-- Building and Campus Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">भवन और परिसर</h2>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">🏫</div>
+                    <div class="facility-content">
+                        <h3>भवन संरचना</h3>
+                        <ul class="facility-list">
+                            <li><strong>भवन स्थिति:</strong> पक्का भवन (1 ब्लॉक)</li>
+                            <li><strong>कक्षाएँ:</strong> 12 कक्षाएं</li>
+                            <li><strong>अन्य कक्ष:</strong> 5 (मुख्याध्यापक कक्ष, लाइब्रेरी, स्टोर, लैब)</li>
+                            <li><strong>सीमांत दीवार:</strong> <span class="status-available">पक्की</span></li>
+                            <li><strong>खेल का मैदान:</strong> <span class="status-available">उपलब्ध</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">🏞️</div>
+                    <div class="facility-content">
+                        <h3>परिसर सुविधाएँ</h3>
+                        <ul class="facility-list">
+                            <li><strong>हरित क्षेत्र:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>पेड़-पौधे:</strong> <span class="status-available">25+</span></li>
+                            <li><strong>बैठने की व्यवस्था:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>साफ-सफाई व्यवस्था:</strong> <span class="status-available">नियमित</span></li>
+                            <li><strong>परिसर सुरक्षा:</strong> <span class="status-available">गेट एवं बाउंड्री</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Basic Facilities Section -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">बुनियादी सुविधाएँ</h2>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">💧</div>
+                    <div class="facility-content">
+                        <h3>आवश्यक सुविधाएँ</h3>
+                        <ul class="facility-list">
+                            <li><strong>पेयजल:</strong> <span class="status-available">उपलब्ध और कार्यरत</span></li>
+                            <li><strong>शौचालय (लड़के):</strong> <span class="status-available">2 (सभी कार्यरत)</span></li>
+                            <li><strong>शौचालय (लड़कियाँ):</strong> <span class="status-available">3 (सभी कार्यरत)</span></li>
+                            <li><strong>हैंडवॉश:</strong> <span class="status-available">शौचालय के पास उपलब्ध</span></li>
+                            <li><strong>बिजली:</strong> <span class="status-available">उपलब्ध</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">🪑</div>
+                    <div class="facility-content">
+                        <h3>फर्नीचर एवं अन्य</h3>
+                        <ul class="facility-list">
+                            <li><strong>फर्नीचर:</strong> <span class="status-available">350 सीटों की व्यवस्था</span></li>
+                            <li><strong>कक्षा वेंटिलेशन:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>प्राकृतिक रोशनी:</strong> <span class="status-available">पर्याप्त</span></li>
+                            <li><strong>बारिश जल संचयन:</strong> <span class="status-not-available">उपलब्ध लेकिन कार्यरत नहीं</span></li>
+                            <li><strong>कचरा प्रबंधन:</strong> <span class="status-available">हाँ</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital and Educational Equipment Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">डिजिटल और शैक्षणिक उपकरण</h2>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">💻</div>
+                    <div class="facility-content">
+                        <h3>कंप्यूटर सुविधाएँ</h3>
+                        <ul class="facility-list">
+                            <li><strong>डेस्कटॉप:</strong> <span class="status-available">2</span></li>
+                            <li><strong>लैपटॉप:</strong> <span class="status-available">1</span></li>
+                            <li><strong>प्रिंटर:</strong> <span class="status-available">3</span></li>
+                            <li><strong>प्रोजेक्टर:</strong> <span class="status-available">1</span></li>
+                            <li><strong>इंटरनेट:</strong> <span class="status-available">उपलब्ध</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">📚</div>
+                    <div class="facility-content">
+                        <h3>शैक्षणिक संसाधन</h3>
+                        <ul class="facility-list">
+                            <li><strong>पुस्तकालय:</strong> <span class="status-available">हाँ (1500+ पुस्तकें)</span></li>
+                            <li><strong>विज्ञान प्रयोगशाला:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>कंप्यूटर लैब:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>डिजीबोर्ड:</strong> <span class="status-not-available">नहीं</span></li>
+                            <li><strong>DTH:</strong> <span class="status-not-available">नहीं</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health and Safety Section -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">स्वास्थ्य और सुरक्षा</h2>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">⚕️</div>
+                    <div class="facility-content">
+                        <h3>स्वास्थ्य सुविधाएँ</h3>
+                        <ul class="facility-list">
+                            <li><strong>मेडिकल चेकअप:</strong> <span class="status-available">नियमित</span></li>
+                            <li><strong>प्राथमिक चिकित्सा किट:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>आँख जाँच शिविर:</strong> <span class="status-available">वार्षिक</span></li>
+                            <li><strong>दंत चिकित्सा शिविर:</strong> <span class="status-available">वार्षिक</span></li>
+                            <li><strong>स्वास्थ्य शिक्षा:</strong> <span class="status-available">नियमित</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-icon">♿</div>
+                    <div class="facility-content">
+                        <h3>सुरक्षा और पहुँच</h3>
+                        <ul class="facility-list">
+                            <li><strong>व्हीलचेयर रैंप:</strong> <span class="status-available">उपलब्ध</span></li>
+                            <li><strong>हैंडरेल्स:</strong> <span class="status-available">उपलब्ध</span></li>
+                            <li><strong>अग्निशमन उपकरण:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>प्राथमिक सुरक्षा प्रशिक्षण:</strong> <span class="status-available">हाँ</span></li>
+                            <li><strong>आपातकालीन निकास:</strong> <span class="status-available">चिह्नित</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>PM SHRI MGGS जीनी</h3>
+                <p>गुणवत्तापूर्ण शिक्षा के लिए समर्पित<br>
+                झुंझुनू, राजस्थान</p>
+                <p><strong>UDISE कोड:</strong> 08050404302</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>सुविधा लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="facilities.html">भवन और परिसर</a></li>
+                    <li><a href="facilities.html">बुनियादी सुविधाएँ</a></li>
+                    <li><a href="facilities.html">डिजिटल उपकरण</a></li>
+                    <li><a href="facilities.html">स्वास्थ्य सुविधाएँ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>त्वरित लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">होम</a></li>
+                    <li><a href="about.html">हमारे बारे में</a></li>
+                    <li><a href="academics.html">शैक्षणिक</a></li>
+                    <li><a href="facilities.html">सुविधाएँ</a></li>
+                    <li><a href="admissions.html">प्रवेश</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>संपर्क करें</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:9413545552">📞 9413545552</a></li>
+                    <li><a href="mailto:sunitakwar123@gmail.com">✉️ sunitakwar123@gmail.com</a></li>
+                    <li><a href="#">📍 जीनी, सूरजगढ़, झुंझुनू</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 PM SHRI महात्मा गांधी सरकारी स्कूल, जीनी | सभी अधिकार सुरक्षित</p>
+            <p>विकसित: स्कूल प्रबंधन समिति | UDISE: 08050404302</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Card animation on scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.facility-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if(cardTop < windowHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initialize card positions
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.facility-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Animate cards when page loads
+            setTimeout(animateCards, 300);
+        });
+        
+        // Animate cards on scroll
+        window.addEventListener('scroll', animateCards);
+    </script>
+</body>
+</html>
